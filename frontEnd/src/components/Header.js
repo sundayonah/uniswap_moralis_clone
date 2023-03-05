@@ -3,11 +3,13 @@ import Logo from "../images/faviconReal.png";
 import Eth from "../images/eth.svg";
 import { Link } from "react-router-dom";
 
-function Header() {
+function Header(props) {
+  const { address, isConnected, connect } = props;
+  console.log(connect, "address");
   return (
     <header>
       <div className="leftH">
-        <img src={Logo} alt="Logo" className="logo" />
+        <img src={Logo} alt="logo" className="logo" />
         <Link to="/" className="link">
           <div className="headerItem">Swap</div>
         </Link>
@@ -20,7 +22,11 @@ function Header() {
           <img src={Eth} alt="eth" className="eth" />
           Ethereum
         </div>
-        <div className="connectButton">Connect Wallet</div>
+        <div className="connectButton" onClick={connect}>
+          {isConnected
+            ? address.slice(0, 4) + "..." + address.slice(38)
+            : "Connect"}
+        </div>
       </div>
     </header>
   );

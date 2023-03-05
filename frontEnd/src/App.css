@@ -3,12 +3,13 @@
 }
 
 header {
-  height: 100px;
+  height: 90px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-left: 50px;
   padding-right: 50px;
+  border-bottom: 1px solid #212329;
 }
 
 .logo {
@@ -53,19 +54,19 @@ header {
 }
 
 .connectButton {
-  background-color: #243056;
+  background-color: #2e2f34;
   padding: 10px;
   padding-right: 20px;
   padding-left: 20px;
-  border-radius: 100px;
-  color: #5981f3;
+  border-radius: 10px;
+  color: #ffffff;
   font-weight: bold;
   transition: 0.3s;
 }
 
 .connectButton:hover {
   cursor: pointer;
-  color: #3b4874;
+  color: #b1b4bc;
 }
 
 .mainWindow {
@@ -91,6 +92,9 @@ header {
   align-items: flex-start;
   padding-left: 30px;
   padding-right: 30px;
+  -webkit-box-shadow: -1px 1px 22px 6px rgba(78, 76, 76, 0.72);
+  -moz-box-shadow: -1px 1px 22px 6px rgba(90, 90, 90, 0.72);
+  box-shadow: -1px 1px 22px 6px rgba(34, 34, 34, 0.72);
 }
 
 .tradeBoxHeader {
