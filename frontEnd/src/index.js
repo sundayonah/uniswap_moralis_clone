@@ -4,11 +4,11 @@ import "./index.css";
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 
-import { configureChains, mainnet, WagmiConfig, createClient } from "wagmi";
+import { configureChains, goerli, WagmiConfig, createClient } from "wagmi";
 import { publicProvider } from "wagmi/providers/public";
 
 const { provider, webSocketProvider } = configureChains(
-  [mainnet],
+  [goerli],
   [publicProvider()]
 );
 
