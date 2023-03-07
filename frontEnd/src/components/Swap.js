@@ -8,7 +8,12 @@ import {
 } from "@ant-design/icons";
 import tokenList from "../tokenList.json";
 
-function Swap() {
+import {useSendTransaction, useWaitForTransaction} from "wagmi";
+
+function Swap(props) {
+//STATE FROM WAGMI
+const {address, isConnected} = props;
+
   //STATE VARIABLE
   const [slippage, setSlippage] = useState(2.5);
   const [tokenOneAmount, setTokenOneAmount] = useState(null);
@@ -19,6 +24,9 @@ function Swap() {
   const [changeToken, setChangeToken] = useState(1);
   const [prices, setPrices] = useState();
   const [txDetails, setTxDetails] = useState();
+
+
+
 
   //handleSlippageChange f(x)
   function handleSlippageChange(e) {
@@ -184,7 +192,7 @@ function Swap() {
         </div>
         <div
           className="swapButton"
-          disabled={!tokenOneAmount}
+          disabled={!tokenOneAmount || !isConnected}
           // onClick={fetchDexSwap}
         >
           Swap
